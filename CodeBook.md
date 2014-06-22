@@ -322,7 +322,7 @@ Values are the averages of each measurement variable (86) for
 - The variable names are human readable having used, as column heads, modified labels from the features.txt
 of the original dataset. Moreover, the values of factor variable "activity" are also easy to understand.
 - The combined, merged, averaged data of several files of the original dataset has been saved on one file.
-- During the processing no anomalies such as missing data were found or redundancy among the extracted columns were identified. 
+- During the processing no anomalies such as missing data were found nor redundancy among the extracted columns were identified. 
 
 #References
 
