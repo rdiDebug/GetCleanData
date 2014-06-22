@@ -139,7 +139,7 @@ MERGED_ds <-rbind(TEST_ds, TRAINING_ds)
 dim(MERGED_ds)
 str(MERGED_ds)
 summary(MERGED_ds)
-write.csv(MERGED_ds, "HAR_merged_ds.txt")
+write.csv(MERGED_ds, "HAR_merged_ds.txt", row.names=FALSE)
 
 #####################################################
 
@@ -155,7 +155,7 @@ tidy_MERGED_ds <- dcast(molten_MERGED_ds, activity + subject ~ variable, mean)
 
 dim(tidy_MERGED_ds)
 tidy_MERGED_ds[,1:6]
-write.csv(tidy_MERGED_ds,"HAR_merged_tidy_ds.txt")
+write.csv(tidy_MERGED_ds,"HAR_merged_tidy_ds.txt", row.names=FALSE)
 
 
 #####################################################
