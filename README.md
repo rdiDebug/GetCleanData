@@ -87,9 +87,9 @@ requirement of the assignment instructions
 ##Creating new TEST and TRAINING datasets
 
 For both the TEST and TRAINING datasets the following data frames are combined:
-* subject the dimension of which is 2947 x 1
-* y the dimension of which is 2947 x 1
-* extracted 86 columns of X containing of 2947 rows
+* subject_<>.txt the dimension of which is 2947 x 1
+* y_<>.txt the dimension of which is 2947 x 1
+* 86 columns extracted from of X_<>.txt containing 2947 rows
 
 TEST and TRAINING datasets then are merged with the activities by y as vector
 of activity IDs.
