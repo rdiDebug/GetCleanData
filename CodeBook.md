@@ -1,11 +1,35 @@
 ==================================================================
 #Code Book
-##HAR merged tidy ds.txt
+##HAR_merged_tidy_ds.txt
 ==================================================================
 
-#Measurement variables
+#Source of the data
 
-original labels                       column heads of this dataset
+The dataset can be seen as a kind of summary of data extracted from the
+"Human Activity Recognition Using Smartphones Data Set [1]"
+The original dataset can be accessed from the following URL:
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
+
+Beyond the README.txt and feature_info.txt in the ZIP file further dataset and
+attribute information can be found on the following web page:
+http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones#
+
+As the summary dataset "HAR_merged_tidy_ds.txt" 
+* contains no variables other than the original dataset,
+* does not change units of the data,
+the aim of this Code Book regarding the variables and their values is highlighting the
+differences (if any) only.
+
+#Variables used
+
+The dataset combines variables from the following subsets of the original:
+
+* "V1" from activity_labels.txt, renamed to "activity"
+* "V1" from subject_test.txt / subject_training.txt, renamed to "subject"
+* measurement variables from X_test.txt / X_training.txt renamed (because of some
+invalid for R characters in them) as follows:
+
+original names                        new names as column heads for this dataset
 
 tBodyAcc-mean()-X                     tBodyAcc.mean...X
 tBodyAcc-mean()-Y                     tBodyAcc.mean...Y
@@ -94,9 +118,28 @@ angle(X,gravityMean)                  angle.X.gravityMean.
 angle(Y,gravityMean)                  angle.Y.gravityMean.
 angle(Z,gravityMean)                  angle.Z.gravityMean.
 
+By replacing the invalid characters automatically using make.names() the new names
+are unique, too.
+
+#Columns used
+
+* y_test.txt / y_training.txt, their only column just renamed to activity, their numeric 
+values changed to the corresponding, descriptive activity values of activity_labels.txt after
+merging the two datasets
+* subject_test.txt / subject_training.txt the values of which are unchanged
+* 86 columns of means and standard deviations extracted from X_test.txt / X_training.txt
+with partly modified new column names as described above.
+
+#Values in the dataset
+Values are the averages of each measurement variable (86) for
+* each activity (6) and
+* each subject (30).
+
+#Tidiness
+
 
 ..................................................................
-Human Activity Recognition Using Smartphones Dataset
+[1] Human Activity Recognition Using Smartphones Dataset
 Version 1.0
 ..................................................................
 Jorge L. Reyes-Ortiz, Davide Anguita, Alessandro Ghio, Luca Oneto.
