@@ -310,7 +310,7 @@ Values are the averages of each measurement variable (86) for
 * each subject (30).
 
 #Tidiness
-
+?
 
 
 [1] Human Activity Recognition Using Smartphones Dataset
