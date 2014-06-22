@@ -1,25 +1,24 @@
 ==================================================================
- #                  Getting and Cleaning Data
- ##                    Course Project Dataset
+#                  Getting and Cleaning Data
+##                    Course Project Dataset
 ==================================================================
 
                            based on: 
 
-..................................................................
 Human Activity Recognition Using Smartphones Dataset
 Version 1.0
-..................................................................
+
 Jorge L. Reyes-Ortiz, Davide Anguita, Alessandro Ghio, Luca Oneto.
 Smartlab - Non Linear Complex Systems Laboratory
 DITEN - Università degli Studi di Genova.
 Via Opera Pia 11A, I-16145, Genoa, Italy.
 activityrecognition@smartlab.ws
 www.smartlab.ws
-..................................................................
+
 
 #Assignment instructions
 
-The purpose of this project is to demonstrate your ability to collect, work
+"The purpose of this project is to demonstrate your ability to collect, work
 with, and clean a data set. The goal is to prepare tidy data that can be used
 for later analysis. You will be graded by your peers on a series of yes/no
 questions related to the project. You will be required to submit: 1) a tidy

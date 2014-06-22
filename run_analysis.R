@@ -13,7 +13,7 @@ getwd() # this is the folder the ZIP will be downladed into
 
 #........skip this if downloaded ZIP manually..............
 
-#thi works on my Linux
+#this works on my Linux
 ZIP <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 download.file(ZIP, destfile="HARdset.zip", method="curl")
 
@@ -62,7 +62,7 @@ extract <- mean_names | std_names
 columns_to_extract <- which(extract)
 cnames <- feature_names[columns_to_extract]
 
-# change the invalid characters of the activity labels
+# change the invalid characters of the variable names
 cnames <- mapply(make.names, cnames) #names for X columns to be extracted
 length(unique(cnames))==length(cnames) #checking whether names are unique
 
@@ -156,5 +156,6 @@ tidy_MERGED_ds <- dcast(molten_MERGED_ds, activity + subject ~ variable, mean)
 dim(tidy_MERGED_ds)
 tidy_MERGED_ds[,1:6]
 write.csv(tidy_MERGED_ds,"HAR merged tidy ds.txt")
+
 
 #####################################################
