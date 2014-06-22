@@ -71,7 +71,7 @@ As the means among the latter two types of variables have been calculated by
 using different averaging algorithms, excluding the signal variables they are
 based on will eliminate any redundancy between these derived variables types.
 That is extracting the means and stds from both of them will not affect the
-tidiness of our resulting dataset. Out of 561 86 columns will be extracted.
+tidiness of our resulting dataset. Out of 561 columns 86 will be extracted.
 
 ##Substitution of the invalid characters in the variable names
 
@@ -80,16 +80,17 @@ those in features.txt. In order to use them in R, however, brackets and
 hyphens have to be removed or replaced. In order to do this I used function
 make.names() that resulted in unique variable names despite all of the dots it
 created. The function produces a vector of R-compatible headers while the
-original labels are also being kept as column names of this vector. Applying
-the function to the headers of the 86 X columns to be extracted fulfils the 4th
-requirement of the assignment instructions
+original labels are also being kept as column names of this vector, ready to
+write into file if needed. Applying make.names() to the headers for the 86 X
+columns to be extracted fulfils the 4th requirement of the assignment
+instructions.
 
 ##Creating new TEST and TRAINING datasets
 
 For both the TEST and TRAINING datasets the following data frames are combined:
-* subject_<>.txt the dimension of which is 2947 x 1
-* y_<>.txt the dimension of which is 2947 x 1
-* 86 columns extracted from of X_<>.txt containing 2947 rows
+* subject_<...>.txt the dimension of which is 2947 x 1
+* y_<...>.txt the dimension of which is 2947 x 1
+* 86 columns extracted from of X_<...>.txt containing 2947 rows
 
 TEST and TRAINING datasets then are merged with the activities by y as vector
 of activity IDs.
@@ -101,19 +102,19 @@ the 3rd assignment instruction, the actID column coming from y can be dropped.
 
 This step was required by the 1st assignment instruction and is now met using
 the rbind() function. The resulting MERGED dataset is saved under the name of
-"HAR merged ds.txt" in the working directory. It also can be found in the
+"HAR_merged_ds.txt" in the working directory. It also can be found in the
 https://github.com/rdirdi/GetCleanData GitHub repository
 
 ##The tidy dataset
 
 From MERGED_ds having variables forming a column each, observations forming a
-row each and having no missing values an independent dataset has been created
+row each, and having no missing values, an independent dataset has been created
 by averaging each variable for each activity and each subject. To produce the
 6 activities x 30 subjects = 180 rows in 88 columns as required by the 5th
 assignment instruction the melt() and dcast() functions were used.
 
 The resulting tidy MERGED dataset is saved in R's working directory under the
-name of "HAR merged tidy ds.txt", uploaded to Coursera with a link to the
+name of "HAR_merged_tidy_ds.txt", uploaded to Coursera with a link to the
 https://github.com/rdirdi/GetCleanData GitHub repository and pushed to the
 GitHub repository as well.
 
