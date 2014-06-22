@@ -31,7 +31,7 @@ The dataset combines variables from the following subsets of the original:
 * measurement variables from X_test.txt / X_training.txt renamed (because of some
 invalid for R characters in them) as follows:
 
-original names -->
+original names changed to
 *        new names as column heads for this dataset
 
 tBodyAcc-mean()-X
@@ -292,7 +292,7 @@ angle(Y,gravityMean)
 angle(Z,gravityMean)
 *        angle.Z.gravityMean.
 
-By replacing the invalid characters automatically, using make.names() the new names
+By replacing the invalid characters -- automatically, using make.names() -- the new names
 are unique, too.
 
 #Columns used
@@ -310,8 +310,21 @@ Values are the averages of each measurement variable (86) for
 * each subject (30).
 
 #Tidiness
-?
 
+###Main principles:
+1. Is each variable measured in one column? YES, as that was the case for these columns in the original dataset, too, by calculating the means and standard deviations of separate variables.
+- Is each different observation of the variables in a different row? YES, for each of the 180 possible activity/subject pairs there is a different row with the averages of the measurement variables.
+- Is there one table for each "kind" of variable? YES, as the each kind equals one.
+- Is there a "key" column for the multiple tables allowing to link them together? NO, the only table of the dataset itself has been created by merging and binding several tables from the original dataset using such columns through which they were linked.
+
+###Other important things:
+- The dataset includes a row with the variable names.
+- The variable names are human readable having used, as column heads, modified labels from the features.txt
+of the original dataset. Moreover, the values of factor variable "activity" are also easy to understand.
+- The combined, merged, averaged data of several files of the original dataset has been saved on one file.
+- During the processing no anomalies such as missing data were found or redundancy among the extracted columns were identified. 
+
+#References
 
 [1] Human Activity Recognition Using Smartphones Dataset
 Version 1.0
